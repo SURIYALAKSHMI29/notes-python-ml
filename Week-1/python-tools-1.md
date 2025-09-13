@@ -93,7 +93,9 @@
 **Create requirements file:**
 ```bash
 pip freeze > requirements.txt
+```
 
+--
 # **Package Manager Overview**
 
 Tools that download, install, update, and manage software packages.
@@ -118,7 +120,7 @@ Tools that download, install, update, and manage software packages.
 
 ## **Python Package Structure**
 
-
+```bash
 my-project/               # root folder
     my-package/           # actual Python package folder
         __init__.py
@@ -126,7 +128,7 @@ my-project/               # root folder
     setup.py              # metadata and install instructions
     README.md
     requirements.txt      # optional dependencies
-
+```
 
 **Nested Packages Purpose:**
 
