@@ -126,12 +126,12 @@ Tools that download, install, update, and manage software packages.
 ```
 
 my-project/               # root folder
-my-package/           # actual Python package folder
-**init**.py
-greetings.py
-setup.py              # metadata and install instructions
-README.md
-requirements.txt      # optional dependencies
+  my-package/           # actual Python package folder
+    **init**.py
+    greetings.py
+  setup.py              # metadata and install instructions
+  README.md
+  requirements.txt      # optional dependencies
 
 ````
 
@@ -141,12 +141,10 @@ requirements.txt      # optional dependencies
 - `__init__.py` → marks folder as a package  
 - `setup.py` → defines metadata (name, version, dependencies, etc.)  
 
-**Example Import:**
+**Example :**
 ```python
-from my_package import requests
+import from my_package import requests
 ````
-
----
 
 # **Installing Packages**
 
