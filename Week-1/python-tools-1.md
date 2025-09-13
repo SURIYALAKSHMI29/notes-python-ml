@@ -96,6 +96,9 @@ pip freeze > requirements.txt
 ```
 
 --
+Here’s your content properly formatted as a clean Markdown (`.md`) file:
+
+```markdown
 # **Package Manager Overview**
 
 Tools that download, install, update, and manage software packages.
@@ -120,15 +123,17 @@ Tools that download, install, update, and manage software packages.
 
 ## **Python Package Structure**
 
-```bash
-my-project/               # root folder
-    my-package/           # actual Python package folder
-        __init__.py
-        greetings.py
-    setup.py              # metadata and install instructions
-    README.md
-    requirements.txt      # optional dependencies
 ```
+
+my-project/               # root folder
+my-package/           # actual Python package folder
+**init**.py
+greetings.py
+setup.py              # metadata and install instructions
+README.md
+requirements.txt      # optional dependencies
+
+````
 
 **Nested Packages Purpose:**
 
@@ -139,85 +144,147 @@ my-project/               # root folder
 **Example Import:**
 ```python
 from my_package import requests
+````
 
-Installing Packages
+---
 
+# **Installing Packages**
+
+* Using `requirements.txt`:
+
+```bash
 pip install -r requirements.txt
+```
 
-pip install . (from setup.py)
+* Using `setup.py`:
 
-Editable install: pip install -e .
+```bash
+pip install .
+```
 
-When to Use
+(dot = current directory)
 
-requirements.txt → shared environments
+* Editable install (during development):
 
-setup.py → distribution of packages
+```bash
+pip install -e .
+```
 
-Fix pip issues
+* Creates link to development directory
+* Changes in source code reflected immediately
 
+**When to Use:**
+
+* `requirements.txt` → shared environments
+* `setup.py` → distribution of packages
+
+**Fix pip issues:**
+
+```bash
 python -m ensurepip --upgrade
+# Or
+get-pip.py
+```
 
-Or run get-pip.py
+---
 
-Distribution Formats
+# **Distribution Formats**
 
-Wheel (.whl): pre-built, fast install
+* **Wheel (.whl):** pre-built, fast install
+* **Source Distribution (.tar.gz, .zip):** build & install from source
+* **Egg (.egg):** older, mostly deprecated
 
-Source Distribution (.tar.gz, .zip): build & install from source
+---
 
-Egg (.egg): older, mostly deprecated
+# **Dependency Conflicts**
 
-Dependency Conflicts
+**Example:**
 
-Example:
+* Package A → needs C >= 2.30
+* Package B → needs C < 2.15
+* Conflict: only one version of C can be installed
 
-Package A → needs C >= 2.30
+**Resolution:**
 
-Package B → needs C < 2.15
+* Use different virtual environments
+* Upgrade/downgrade versions
+* Use tools like poetry, pipenv, conda
 
-Conflict resolution:
+---
 
-Use different virtual environments
+# **Conda**
 
-Upgrade/downgrade versions
+* Open-source package & environment manager
+* Installs Python + non-Python dependencies
+* Good for ML, data science, and scientific computing
 
-Use tools like poetry, pipenv, conda
+**Anaconda vs Miniconda:**
 
-Conda
+* Anaconda → large, preinstalled packages
+* Miniconda → minimal, lightweight
 
-Open-source package & environment manager
+**Common Conda Commands:**
 
-Installs Python + non-Python dependencies
+* **Create environment:**
 
-Good for ML, data science, scientific computing
+```bash
+conda create --name myenv python=3.x
+```
 
-Anaconda vs Miniconda
+* **Activate environment:**
 
-Anaconda → large, preinstalled packages
+```bash
+conda activate myenv
+```
 
-Miniconda → minimal, lightweight
+* **Set environment variables:**
 
-Common Conda Commands
+```bash
+conda env config vars set varName=varValue
+```
 
-Create env: conda create --name myenv python=3.x
+* **Deactivate environment:**
 
-Activate: conda activate myenv
+```bash
+conda deactivate
+```
 
-Set env vars: conda env config vars set varName=varValue
+* **Install package:**
 
-Deactivate: conda deactivate
+```bash
+conda install packageName
+```
 
-Install package: conda install packageName
+(Fallback: use `pip install` inside the environment if package not found in conda repos)
 
-fallback: pip install inside env
+* **List installed packages:**
 
-List packages: conda list
+```bash
+conda list
+```
 
-Export env: conda env export > environment.yml
+* **Export environment:**
 
-Remove package: conda remove packageName
+```bash
+conda env export > environment.yml
+```
 
-Remove env: conda remove --name envName --all
+* **Remove package:**
 
-Update conda: conda update conda
+```bash
+conda remove packageName
+```
+
+* **Remove environment:**
+
+```bash
+conda remove --name envName --all
+```
+
+* **Update conda:**
+
+```bash
+conda update conda
+```
+
+
