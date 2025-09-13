@@ -95,10 +95,6 @@
 pip freeze > requirements.txt
 ```
 
---
-Here’s your content properly formatted as a clean Markdown (`.md`) file:
-
-```markdown
 # **Package Manager Overview**
 
 Tools that download, install, update, and manage software packages.
