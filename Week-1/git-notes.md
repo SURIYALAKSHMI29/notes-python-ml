@@ -127,16 +127,15 @@
 
 Each remote has its remote-tracking branches in your local `.git` folder:  
 
-Example after adding remotes:  
+Example after adding remotes:
 
-`refs/remotes/origin/master
+refs/remotes/origin/master
 
 refs/remotes/origin/feature-1
 
 refs/remotes/backup/master
 
-refs/remotes/backup/feature-1`
-
+refs/remotes/backup/feature-1
 
 - `refs/remotes/<remote>/<branch>` is how Git keeps track of what the remote repo looks like  
 - These are read-only in local repo — you cannot commit to them directly  
