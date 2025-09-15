@@ -1,0 +1,20 @@
+{
+    // Use Black as default formatter
+    "python.formatting.provider": "black",
+    // Run Black on save
+    "editor.formatOnSave": true,
+    // Run isort on save
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+        "source.fixAll": true
+    },
+    // Optional: set line length (should match Black’s default 88)
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "88"
+    ],
+    // If using Ruff (alternative), disable its import sorting to avoid clashes
+    "python.analysis.fixAll": {
+        "source.organizeImports": false
+    }
+}
