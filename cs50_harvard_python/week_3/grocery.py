@@ -1,0 +1,31 @@
+"""
+
+Question:
+implement a program that prompts the user for items, one per line, until the user inputs control-d (which is a common way of ending one’s input
+to a program). Then output the user’s grocery list in all uppercase, sorted alphabetically by item, prefixing each line with the number of times
+the user inputted that item. No need to pluralize the items. Treat the user’s input case-insensitively.
+
+"""
+
+
+def get_grocery_list():
+    grocery_list = {}
+
+    while True:
+        try:
+            item = input().strip().upper()
+            grocery_list[item] = grocery_list.get(item, 0) + 1
+        except EOFError:
+            print()
+            break
+
+    return dict(sorted(grocery_list.items()))
+
+
+def main():
+    grocery_list = get_grocery_list()
+    for item, count in grocery_list.items():
+        print(count, item)
+
+
+main()
