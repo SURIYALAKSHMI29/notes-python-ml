@@ -4,15 +4,7 @@
 - [Exceptions](#exceptions)
   - [Common Built-in Exceptions](#common-built-in-exceptions)
   - [Keywords: try, except, else, finally, raise](#keywords-try-except-else-finally-raise)
-  - [try](#try)
-  - [except](#except)
-  - [else](#else)
-  - [finally](#finally)
-  - [raise](#raise)
 - [Loops](#loops)
-  - [pass](#pass)
-  - [continue](#continue)
-  - [break](#break)
 
 ---
 
