@@ -1,14 +1,14 @@
-''''
+"""'
 
 Question:
-dollars_to_float, which should accept a str as input (formatted as $##.##, 
-wherein each # is a decimal digit), remove the leading $, and return the 
+dollars_to_float, which should accept a str as input (formatted as $##.##,
+wherein each # is a decimal digit), remove the leading $, and return the
 amount as a float. For instance, given $50.00 as input, it should return 50.0.
-percent_to_float, which should accept a str as input (formatted as ##%, 
-wherein each # is a decimal digit), remove the trailing %, and return the 
+percent_to_float, which should accept a str as input (formatted as ##%,
+wherein each # is a decimal digit), remove the trailing %, and return the
 percentage as a float. For instance, given 15% as input, it should return 0.15.
 
-'''
+"""
 
 
 def main():
@@ -22,9 +22,9 @@ def main():
 
 def dollars_to_float(d):
     # Remove the leading $
-    modified_d = d[1:]  
-    # modified_d = d.replace("$", "")  
-    # modified_d = d.lstrip("$") 
+    modified_d = d[1:]
+    # modified_d = d.replace("$", "")
+    # modified_d = d.lstrip("$")
 
     return round(float(modified_d), 1)
 
