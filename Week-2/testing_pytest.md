@@ -158,9 +158,6 @@ def test_add(a, b, expected):
 * *pytest --maxfail=2* → stops after 2 failures
 * *pytest --tb=short* → shorter traceback
 * *pytest --html=report.html* → generates HTML report (requires pytest-html)
-
-**Best Practices:**
-
 * Functions should return a value if we need to test them
 * Avoid `print()` inside core logic functions. Use `return` instead
 * Keep I/O separate from logic
