@@ -1,5 +1,5 @@
 # Table of Contents
-- [Return Values](#return-values)
+- [Return values](#return-values)
 - [Class](#class)
   - [Namespace](#namespace)
   - [Instantiation](#instantiation)
@@ -7,23 +7,23 @@
   - [Classes as Instances of type](#classes-as-instances-of-type)
   - [Adding Methods to a Class at Runtime](#adding-methods-to-a-class-at-runtime)
   - [Descriptors](#descriptors)
-  - [Attribute Lookup Order](#attribute-lookup-order)
+  - [Attribute lookup order](#attribute-lookup-order)
   - [Method Binding](#method-binding)
   - [Slots](#slots)
   - [Dunder/Magic Methods](#dundermagic-methods)
 
-# Return Values
+# Return values
 
 - As tuples:
-    - `return (a, b)`
+    - return (a, b)
     - Immutable: once returned, the values cannot be changed directly
     - Useful for: safe, defensive coding when we don’t want the caller to accidentally modify the values
 - As list:
-    - `return [a, b]`
-    - Mutable: values can be modified after being returned
+    - return [a, b]
+    - Mutable: values can be modified after being returned.
     - Useful when: we want the calling function to update the returned data
 - As Dictionary:
-    - `return { "name": name, "house": house }`
+    - return { “name”: name, “house”: house}
     - Indexed by keys, not positions
     - Values can be modified
     - Useful when: returning structured data with meaningful keys, easy to access
@@ -31,146 +31,193 @@
 # Class
 
 - Way of bundling data and functionality together, creating new object types
-- In Python, classes are not just blueprints for creating objects; they are themselves objects - instances of the metaclass `type`.
+- In Python, classes are not just blueprints for creating objects; they are themselves objects - instances of the metaclass type.
 - Class Definition:
     
     ```python
     class ClassName:
-        <statement>
+    	<statement>
     ```
     
-- This creates a new **namespace**, and the class object is bound to `ClassName`
-    - Calls the metaclass (by default `type`) with `(name, base, dict)` to create a class object
-    - Binds that class object to the name after `class` in the surrounding scope
+- This creates a new **namespace,** and the class object is bound to *ClassName*
+    - Calls the metaclass (by default *type*) with *(name, base, namespace)* to create a class object.
+    - Binds that class object to the name after ***class***  in the surrounding scope.
 
-## Namespace
+## Namespace:
 
-- Mapping between names and objects in Python
-- A container that keeps track of all identifiers (variables, functions, classes, etc.) and what they refer to in memory
+- Mapping between names and objects in python;
+- A container that keeps track of all identifiers(variables, functions, classes,..) and what they refer to in memory
 
 ### Different Types of Namespaces
 
-1. **Built-in namespace:** contains all built-in names like `len`, `print`, `int`, etc
+1. **Built-in namespace:** contains all built-in names like len, print, int, etc
 2. **Global namespace:** Created for each file/module, contains all the names (variables, functions, classes) defined outside any function/class
 3. **Local namespace:** Created when a function is called
-4. **Class namespace:** Created when we define a class (also attribute and method names)
+4. **Class namespace:** Created when we define a class (also attr and methods names)
 
-## Instantiation
+## Instantiation:
 
 ```python
 obj_name = ClassName()
 ````
 
-* Internally calls **`type.__call__`** which executes:
+Here Class\_name() internally calls **type\_\_call\_\_** which does
 
-  * **`__new__`**: allocates memory and returns a new empty instance
-  * **`__init__`**: initializes the instance with the data specified
-  * Returns a fully prepared object
+* ****new****
+
+  * Allocates memory and returns a new empty instance of **ClassName**
+* ****init****
+
+  * Takes that raw instance and initializes it with the data specified in class constructor call
+* Returns a fully prepared object
 
 ## Attributes
 
-* **Class attributes:** stored in `ClassName.__dict__`, shared by all instances
+* **Class attributes** are get stored in ClassName.**dict**  and it is shared by all instances of the class
+* **Instance attributes** are \*\*\*\*unique to each object; defined in **init** with self
+* **Private and Protected Attributed:**
 
-* **Instance attributes:** unique to each object; defined in `__init__` with `self`
+  * **\_attr**
 
-* **Private and Protected Attributes:**
+    * protected; python doesn’t prevent access; it’s just a signal to other developers
+  * **\_\_attr**
 
-  * `_attr` → protected; signaling convention, not enforced
-  * `__attr` → private; triggers *name mangling*: `_ClassName__attr`
-
-* **Accessing attributes or methods:** `a.greet()` calls `a.__getattribute__('greet')`
-
-* **Setting attributes:** `a.var1 = 42` calls `a.__setattr__('var1', 42)`
+    * private , to avoid accidental access
+    * Double underscores triggers *name mangling;* python internally renames the variable to *\_*ClassName*\_\_var*
+* **Accessing an attribute or method** (a.greet()) → calls a.**getattribute**('greet') → normal lookup → if not found, **getattr\*\***\*\* is called.
+* **Setting an attribute** (a.var1 = 42) → calls a.**setattr**('var1', 42) → use object.**setattr**(self, ‘var1’, 42) inside to actually store the value.
 
 ## Classes as Instances of type
 
-### type()
+### type():
 
-1. `type(object)` → returns the type of the object
-2. `type(name, bases, namespace)` → creates a new class dynamically
+1. *type(object)* - returns the type of the given object
+2. *type(name, base, namespace)* - creates a new class dynamically.
 
-   * `name`: string representing the new class name
-   * `bases`: tuple of base classes to inherit from
-   * `namespace`: dict defining attributes and methods
+   * name : A string representing the name of the new class.
+   * bases : A tuple containing the base classes from which the new class will inherit.
+   * *namespace* : A dictionary defining the attributes and methods of the new class.
 
-```python
-MyClass = type('MyClass', (object,), {'x': 5})
-```
+   **Example:**
+
+   ```python
+   MyClass = type('MyClass', (object,), {'x': 5})
+   ```
+
+   * ‘MyClass’ : The name of the new class.
+   * (object,): A tuple with a single element, indicating that MyClass inherits from the base class object
+   * {'x': 5}: A dictionary defining an attribute x with the value 5 for instances of MyClass.
 
 ## Adding Methods to a Class at Runtime
+
+Since classes are objects, methods can be added by using *setattr()*
 
 ```python
 def greet(self):
     return f"Hello from {self.__class__.__name__}!"
 
-# Add dynamically
+**# setattr(MyClass, 'method_name', method_function)**
 setattr(MyClass, 'greet', greet)
+
 # or
 MyClass.greet = greet
 ```
 
+This adds a *greet()* method to *MyClass*.
+
+**Using *setattr()* is advantageous when:**
+
+* The method name is determined dynamically at runtime.
+* You need to add methods to classes that you don't have direct access to modify.
+
 ## Descriptors
 
-* Objects implementing at least one of:
+* A descriptor is any object with at least one of these methods:
 
-  * `__get__(self, instance, owner)`
-  * `__set__(self, instance, value)`
-  * `__delete__(self, instance)`
-* **Data descriptor:** has `__set__` or `__delete__` → takes precedence over instance attributes
-* **Non-data descriptor:** only `__get__` → checked after instance attributes
+  * **\_\_**get**\_\_**(self, instance, owner)
+  * **\_\_**set**\_\_**(self, instance, value)
+  * **\_\_**delete**\_\_**(self, instance)
+* Function in a class is a descriptor as it has a **get** method
+* A descriptor is just an object that controls **attribute access**
 
-## Attribute Lookup Order
+Two types:
 
-1. Check `obj.__class__.__dict__` for **data descriptors**
-2. Check `obj.__dict__` (instance attributes)
-3. Check `obj.__class__.__dict__` for **non-data descriptors** or plain values
-4. Follow MRO (Method Resolution Order) from most derived to base classes
-5. If nothing found → `AttributeError`
+* **Data descriptor** (has **set**  or  **delete**) → takes precedence over instance attributes.
+* **Non-data descriptor** (only **get**) → checked after instance attributes.
 
-## Method Binding
+Python data descriptor → controls how attributes are accessed/modified, dynamic.
+
+Java private → controls who can access, static visibility only.
+
+### Attribute lookup order
+
+1. **Check obj.**class**.**dict****
+
+   * If there’s a data descriptor (**get** + **set** / **delete**)
+
+     * immediately use it (skips obj.**dict**)
+2. **Check obj.**dict** (instance attributes)**
+
+   * If found → return it.
+3. **Check obj.**class**.**dict** again**
+
+   * If it’s a **non-data descriptor** (**get** only) → call its **get**.
+   * If it’s a plain value (non-descriptor) → return it
+4. Follow MRO(Model Resolution Order) with same rules
+
+   * MRO - bottom to top; most derived(cls of the obj) to the base class(ancestors)
+5. If still nothing → *AttributeError*
+
+### Method Binding
 
 * Function in a class is a descriptor
-* Calling a method on an instance returns a bound method
+* When instance of a class, calls a method it internally executes
+
+  * *ClassName.method\_name.**get**(instance, ClassName)* - returns a bound method
+  * Bound method:  remembers the instance
+
+    * ***self*** → the instance (instance)
+    * ***func*** → the original function (ClassName.method\_name)
+* Class access - access a method directly by using its’ ClassName returns a raw function; Not bound to any instance
 
 ```python
 class X:
-    def greet(self):
-        return f"hello {self}"
-
+	def greet(self):
+		return f"hello {self}"
+		
 x = X()
-m = x.greet  # bound method
-print(m.__self__ is x)  # True
-print(m.__func__ is X.greet)  # True
-```
+m = x.greet     # returns bounded function
 
-* Accessing `a.greet()` calls `a.__getattribute__('greet')`
-* Setting `a.var1 = 42` calls `a.__setattr__('var1', 42)`
+print(type(m))       # <class 'method'>
+print(m.__self__ is x)  # True
+
+**# m.__func__ - points to the orginal function**
+**# m.__self__ - points to the instance**
+```
 
 ## Slots
 
-* Restrict which attributes an instance can have using `__slots__`
-* Saves memory by avoiding `__dict__` for each instance
+* By defining ****slots****, we can restrict which attributes an instance can have
+* Attributes not in **slots** cannot be added
+* Saves memory by avoiding **dict** of each class
 
 ```python
 class X:
-    __slots__ = ['a', 'b']
+**slots** = ['a', 'b']  # only 'a' and 'b' allowed
 
 x = X()
-x.var3 = 2  # Error
+x.var3 = 2   # throws an error
 ```
 
-## Dunder/Magic Methods
+## Dunder/Magic Methods:
 
-* Special methods with double underscores, e.g., `__str__`, `__add__`
-* Customize Python behavior
+* Special methods with double underscores at the start and end(eg: **str**, **add**) and allows to customize how python behaves with your objects
 
-Examples:
-
-* `__str__` → user-friendly string representation
-* `__repr__` → developer-friendly representation
-* `__add__` → `+` operator
-* `__len__` → `len(obj)`
-* `__getitem__` → `obj[key]`
+1. **str** → defines what is shown to a user when you print an object
+2. **repr** → defines a developer-friendly representation, often used in debugging
+3. **add** → defines behavior for + operator
+4. **len** → called by len(obj)
+5. **getitem** → called by obj\[key]
 
 ```python
 class Circle:
@@ -181,12 +228,19 @@ class Circle:
         return f"A circle with radius {self.radius}"
     
     def __repr__(self):
-        return "Circle"
-
+		    return "Circle"
+ 
 circle = Circle(5)
-print(circle)  # calls __str__
-circle         # calls __repr__
-``` 
+print(circle)     **# python internally calls circle.__str__()** 
+# prints 'A circle with radius 5'
 
-If you want, I can also **add a smaller TOC at the top of each subsection**, so clicking it jumps to sub-subsections like descriptors, slots, etc., for faster navigation. Do you want me to do that?
+circle       # python calls circle.__repr__() in console
+# prints "Circle"
+
+# p1 + p2 -> calls p1.__add__(p2)
+
+```
+
+
+If you want, I can also make the **subsection links more granular**, like linking directly to `type()`, `descriptors`, `slots`, etc., for faster jumps. Do you want me to do that?
 ```
