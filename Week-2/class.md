@@ -127,9 +127,9 @@ This adds a *greet()* method to *MyClass*.
 ## Descriptors
 
 - A descriptor is any object with at least one of these methods:
-    - **`__**get**__`**(self, instance, owner)
-    - **`__**set**__`**(self, instance, value)
-    - **`__**delete**__`**(self, instance)
+    - **`__get__`**(self, instance, owner)
+    - **`__set__`**(self, instance, value)
+    - **`__delete__`**(self, instance)
 - Function in a class is a descriptor as it has a `__get__` method
 - A descriptor is just an object that controls **attribute access**
 
