@@ -1,12 +1,7 @@
 # Table of Contents
 - [Raise](#raise)
 - [Decorators](#decorators)
-  - [Property Decorator](#property-decorator)
-  - [Setter](#setter)
-  - [Example: Uppercase Decorator](#example-uppercase-decorator)
 - [Property](#property)
-  - [Decorators Using Property](#decorators-using-property)
-  - [Usage](#usage)
 
 # Raise
 
