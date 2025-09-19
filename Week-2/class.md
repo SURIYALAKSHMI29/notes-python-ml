@@ -73,8 +73,8 @@ Here Class\_name() internally calls **type\_\_call\_\_** which does
 
 ## Attributes
 
-* **Class attributes** are get stored in ClassName.**dict**  and it is shared by all instances of the class
-* **Instance attributes** are \*\*\*\*unique to each object; defined in **init** with self
+* **Class attributes** are get stored in ClassName.__dict__  and it is shared by all instances of the class
+* **Instance attributes** are \*\*\*\*unique to each object; defined in __init__ with self
 * **Private and Protected Attributed:**
 
   * **\_attr**
