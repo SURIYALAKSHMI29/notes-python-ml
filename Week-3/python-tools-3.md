@@ -1,5 +1,3 @@
----
-
 # Table of Contents
 
 * [Pytest](#pytest)
@@ -98,8 +96,8 @@ def test_fetch_data():
     
     ```python
     def divide_numbers(a, b):
-    		x = 10        **# pylint: disable=invalid-name, unused-variable**
-        return a / b  **# pylint: disable=zero-division**
+    		x = 10        # pylint: disable=invalid-name, unused-variable
+        return a / b 	  # pylint: disable=zero-division
     ```
     
 
@@ -156,7 +154,7 @@ git commit -m "Initialize DVC"
 
 ```bash
 dvc add data/raw_data.csv
-**# Updates .gitignore automatically**
+# Updates .gitignore automatically
 
 git add data/raw_data.csv.dvc .gitignore
 git commit -m "Add raw data tracked by DVC"
