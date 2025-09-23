@@ -164,15 +164,6 @@ copy3 = original[:]
 copy4 = list(original)
 ```
 
-⚠️ **Caveat with nested lists:**
-
-```python
-original = [[1,2], [3,4]]
-shallow = original.copy()
-shallow[0].append(99)
-print(original)  # [[1, 2, 99], [3, 4]] → inner list affected
-```
-
 ---
 
 ## Deep Copy
