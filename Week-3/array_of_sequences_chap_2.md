@@ -37,7 +37,7 @@
 
 **Example**
 
-![tuple - Left side; Array - Right side](attachment:668eff87-9d55-4927-8ece-742ac2c1421e\:image.png)
+![tuple - Left side; Array - Right side](sequence_example.png)
 
 tuple - Left side; Array - Right side
 
