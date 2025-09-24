@@ -40,11 +40,6 @@
 * Hold items of one simple type.
 * Examples: `str`, `bytes`, `array.array`
 * Stores the value of its content in its own memory space.
-
-**Example**
-
-![tuple - Left side; Array - Right side](attachment:668eff87-9d55-4927-8ece-742ac2c1421e\:image.png)
-
 * tuple: has an array of references to its items; each item is a separate Python object
 * array: a single object holding array values
 
