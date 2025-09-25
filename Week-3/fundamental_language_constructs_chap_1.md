@@ -8,8 +8,6 @@
    - [Card Example](#here-card-can-be-created-in-2-ways)
    - [Deck Example](#example)
 5. [Doctest](#doctest)
-   - [Ellipsis (…) in doctests](#ellipsis-in-doctests)
-   - [# doctest: +ELLIPSIS directive](#doctest-+-ellipsis-directive)
 6. [Emulating Numeric Types](#emulating-numeric-types)
 7. [String Representation](#string-representation)
    - [%r and !r](#r-and-r)
