@@ -4,6 +4,7 @@
 # Table of Contents
 
 1. [Queues](#queues)
+
     1.1 [Deque](#deque)
     1.2 [SimpleQueue](#simplequeue)
     1.3 [queue.Queue](#queuequeue)
