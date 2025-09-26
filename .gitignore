@@ -2,3 +2,5 @@ __pycache__/
 *.py[cod]
 
 .pytest_cache
+
+Week-3/python_3_exercises/large_file.txt
