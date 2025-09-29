@@ -40,9 +40,11 @@ cat = Cat()
 print(cat.sound())   # Meow
 ````
 
-### Abstract Methods → Defined in an abstract class but do not have an implementation
+### Abstract Methods 
+* Defined in an abstract class but do not have an implementation
 
-### Concrete Methods → Methods that have full implementations in an abstract class
+### Concrete Methods
+* Methods that have full implementations in an abstract class
 
 ### Abstract properties
 
