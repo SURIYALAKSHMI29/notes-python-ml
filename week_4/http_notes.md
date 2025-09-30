@@ -95,7 +95,7 @@
 
 * Compression of the body of a message → done by the server and will last unchanged until it reaches the client
 
-![httpenco1.svg](attachment:7fb5e99d-b610-46ba-bf05-17ad0025420a.svg)
+![httpenco1.svg](httpenco1.svg)
 
 * Optimized for text
 
@@ -104,7 +104,7 @@
 * To select the algo to use, browsers and servers use Proactive Content Negotiation
 * Browser sends an Accept-Encoding header with the algorithm it supports, the server picks one, uses it to compress the body of the response and uses the Content-Encoding header to tell the browser the algo it has chosen
 
-![httpcompression1.svg](attachment:36355b0c-de2c-40c0-9313-6139b18ac596.svg)
+![httpcompression1.svg](httpcompression1.svg)
 
 ## HTTP Caching
 
@@ -154,7 +154,7 @@
 
 * 401 Unauthorized response + www - authentication header
 
-![basic-auth.svg](attachment\:bd327dc7-3a39-46e1-b040-4739b6a7fb3a.svg)
+![basic-auth.svg](basic-auth.svg)
 
 * If the credentials are invalid → 401
 * Valid, but user lacks permission → 403 Forbidden
