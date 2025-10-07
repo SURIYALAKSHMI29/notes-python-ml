@@ -243,20 +243,21 @@ st.button("Increase count_value", on_click=increase)
 st.button("Reset count_value", on_click=reset)
 ```
 
-## Layouts
 
-### Sidebar
+# Layouts
+
+## Sidebar
 
 - st.sidebar.title(), st.sidebar.write(), st.sidebar.text_input()
 - Use st.sidebar.command
 - Sidebar is resizeable
 
-### Tabs
+## Tabs
 
 - st.tabs([list of tab names])
 - Can use ‘with’ keyword to do context specific functions
 
-### Columns
+## Columns
 
 - st.columns(n) → where n is no.of columns
 
@@ -268,7 +269,7 @@ st.columns(spec, *, gap="small", vertical_alignment="top", border=False, width="
 - To add elements to the container, ‘with’ is used
 - Can call methods directly on the returned objects
 
-### Container
+## Container
 
 - st.container()
 
@@ -314,11 +315,11 @@ st.expander(label, expanded=False, *, icon=None, width="stretch")
 - Tooltip can be added to buttons with “help” attribute
 
 > The only elements that aren't supported using object notation are *st.echo*, *st.spinne*r, and *st.toast*. To use these elements, you must use *with* notation.
-> 
 
-## Widgets
 
-### Id / Key
+# Widgets
+
+## Id / Key
 
 - One that holds some kind of state, for example text_input, button
 - All the widgets will have an auto-generated id or key based on the type of the element and then any parameters that we pass to it → this id/key is used to store its state
@@ -352,7 +353,7 @@ st.session_state.slider_value = st.slider("Slider Value", minimum_value, 100, st
 
 ```
 
-### Widgets’ state
+## Widgets’ state
 
 - If Widget is no longer rendered on the screen, its state is destroyed
 - When we stop rendering, then its internal state is removed from the session. And when we create that component again, it now has a new state
@@ -377,7 +378,7 @@ st.write(f"User Input: {user_input}")
  user_input = st.text_input("Enter something: ", value = st.session_state.user_input)
 ```
 
-## Caching
+# Caching
 
 - Long running functions run again and again, which slows down the app and Objects get recreated again and again, which makes it hard to persist them across reruns or sessions
 - To cache a function, one of the two decorators can be used
@@ -388,7 +389,7 @@ st.write(f"User Input: {user_input}")
     2. Code inside the function
 - First time call → Streamlit runs it and caches the result. On subsequent calls with the same parameters and code → returns the cached value instead of re-executing
 
-### **cache_data**
+## **cache_data**
 
 - Used for immutable data
 - Modifying the value won’t affect the cached value
@@ -397,7 +398,7 @@ st.write(f"User Input: {user_input}")
 - Implicitly uses *pickle* module (which is known to be insecure) → Only load data from trusted sites
 - Mostly used as most data in python are serializable object (obj that can be converted to bytes via pickle)
 
-### **cache_resource**
+## **cache_resource**
 
 - Used for mutable data
 - Allows modifications to the underlying resource
@@ -414,9 +415,9 @@ st.write(f"User Input: {user_input}")
 
 > Note: Manual rerun → st.rerun()
 Can force the app to rerun
-> 
 
-## Fragments
+
+# Fragments
 
 - Way to rerun only certain portions of the User Interface and better organize of separate out the code
 - Code block that is separated with decorator *@st.fragment* → will run independently from the rest of the application
@@ -446,15 +447,15 @@ def filter_and_file():
 ```
 
 > **Using caching and fragments on the same function is unsupported**
-> 
 
-## Multi-pages app
+
+# Multi-pages app
 
 - Provides 2 built-in mechanisms for creating mutli-page apps
     1. Using *pages/* directory
     2. Using *st.Page* and *st.navigation*
 
-### Page Terminology
+## Page Terminology
 
 A page has four identifying pieces as follows:
 
@@ -468,7 +469,7 @@ Additionly, a page can have two icons as follows:
 - **Page favicon**: This is the icon next to your page title within a browser tab.
 - **Page icon**: This is the icon next to your page label in the navigation menu.
 
-### st.Page and st.navigation
+## st.Page and st.navigation
 
 - Preferred commands for defining multiple apps
 - entrypoint file acts like a page router; Defining elements or widgets in entrypoint file, become common elements between the pages
@@ -482,7 +483,6 @@ page = st.Page("pages/about.py", title="About", icon="ℹ️")
 def home_page():
     st.write("Welcome to Home")
 page = st.Page(home_page, title="Home")
-
 ```
 
 - Allows to set label and title using *title* and *st.set_page_config()* can be used to change the page title and favicon
@@ -500,7 +500,7 @@ st.navigation({
 })  # nested inside of each other
 ```
 
-### pages/ directory
+## pages/ directory
 
 - If pages/ directory is present next to the entrypoint file, streamlit will identify each python file within it as a Page
 - Pages support run-on-save; A page modified while the app is running, and If user is on
@@ -509,9 +509,9 @@ st.navigation({
     
 
 > All the pages share the **same session_state,** which allows to store and retrieve data across different pages
-> 
+ 
 
-### st.switch_page()
+## st.switch_page()
 
 - Used to programmatically move between the pages
 
@@ -522,9 +522,9 @@ st.switch_page("pages/page_name.py")
 st.switch_page("Page title")
 ```
 
-- Navigate programmatically → for example: After login
+- Navigate programmatically → for ex, After login
 
-### st.page_link()
+## st.page_link()
 
 - Creates a clickable link that allows users to jump to another page without using the navigation menu
 - Similar to Hyperlink
@@ -532,4 +532,3 @@ st.switch_page("Page title")
 
 > Navigation via Streamlit’s built-in tools keeps your app state.
 Navigation via plain URLs or Markdown links resets it.
-
