@@ -1,0 +1,40 @@
+{% extends "products/layout.html" %}
+
+{% block header %} Orders {% endblock header %}  
+
+{% block body %}
+    <a href="{% url 'index' %}" 
+       style="font-weight: bold; font-size: 20px; color:#000; padding:16px; float: left;">
+       Back to Products
+    </a>
+
+    <a href="{% url 'place_order' %}" 
+       style="font-weight: bold; font-size: 20px; color:#000; padding:16px; float: right;">
+       Place Order
+    </a>
+
+    <p style="clear: both; margin-bottom:50px"></p>
+    
+    <table style="width:60%; margin: 0 auto; text-align: center; font-size: 20px" border="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Total Amount</th>
+            <th>Purchase Date</th>
+        </tr>
+
+        {% for order in orders %}
+            <tr onclick="window.location='{% url 'order' order.id %}'" style="cursor: pointer;">
+                <td>{{ order.id }} </td>
+                <td>{{ order.customer.name }}</td>
+                <td>{{ order.total_amount }}</td>
+                <td>{{ order.purchase_date }}</td>
+            </tr>
+            
+            {% empty %}
+            <tr>
+                <td colspan="4">No orders found.</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

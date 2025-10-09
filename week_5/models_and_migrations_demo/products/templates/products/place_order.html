@@ -1,0 +1,75 @@
+{% extends "products/layout.html" %}
+
+{% block header %}Place Order{% endblock%}
+
+{% block body %}
+    <form action="{% url 'place_order' %}" method="post" style="text-align: center; margin-bottom:800px">
+        {% csrf_token %}
+        Customer: <select name="customer_id">
+            <option Selected disabled>Select a customer</option>
+            {% for customer in customers %}
+                <option value="{{ customer.id }}">{{ customer.name }} - {{ customer.phone }}</option>
+            {% endfor %}
+        </select> <br/><br/>
+
+        Products:
+        <select id="productSelect" multiple size="4">
+            {% for product in products %}
+                <option value="{{ product.id }}" data-name="{{ product.name }}" data-price="{{ product.price }}">
+                    {{ product.name }} - ₹{{ product.price }}
+                </option>
+            {% endfor %}
+        </select>
+        <br/><br/>
+
+        {% if messages %}
+            {% for message in messages %}
+                <p  style="color: red;">{{ message }}</p>
+            {% endfor %}            
+        {% endif %}
+        <br/>
+
+        <div id="cartContainer" style="border: 1px solid #ccc; padding: 10px; margin-top: 10px; width: 60%;">
+        </div>
+        <br/><br/>
+
+        <input type="submit" value="Place Order">
+    </form >
+
+    <script>
+        const productSelect = document.getElementById("productSelect");
+        const cartContainer = document.getElementById("cartContainer");
+
+        function updateCart() {
+            const previousQuantities = {};
+            cartContainer.querySelectorAll("input[type=number]").forEach(input => {
+                const productId = input.name; 
+                previousQuantities[productId] = input.value;
+            });
+
+            cartContainer.innerHTML = ""; 
+            const h2 = document.createElement("h2");
+            h2.textContent = "Selected Items";
+            cartContainer.appendChild(h2);
+            
+
+            for (let option of productSelect.selectedOptions) {
+                const productId = option.value;
+                const name = option.dataset.name;
+                const price = option.dataset.price;
+                const quantity = previousQuantities[productId] || 1;
+
+                const div = document.createElement("div");
+
+                div.innerHTML = `
+                    <strong>${name} - ₹${price}</strong> 
+                    Quantity: <input type="number" name="${productId}" value="${quantity}" min="1">
+                    <hr/>
+                `;
+                cartContainer.appendChild(div);
+            }
+        }
+
+        productSelect.addEventListener("change", updateCart);
+    </script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "products/layout.html" %}
+{% block header %}Product - {{product.id}} {% endblock %}
+{% block body %}
+    <h1>Product {{ product.id }}: {{ product.name }} </h1>
+    <ul>
+        <li>Price: {{ product.price }} </li>
+        <li>Quantity: {{ product.qty_on_hand }} </li>
+    </ul>
+
+    <hr/>
+
+    <h2>Customers who ordered this product</h2>
+    <ul>
+        {% for customer in customers %}
+            <li> {{ customer }} </li>
+        {% empty %}
+            <p>No customer has ordered this product yet.</p>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'index' %}">Back to products</a>
+
+{% endblock %}
