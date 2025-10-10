@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interval</title>
+    </head>
+    <body>
+        <h1>Interval</h1>
+        <h3>Enter number of times you want to say hello</h3>
+        <form>
+            <input autofocus type="number" placeholder="for ex: 4" id="count"/>
+            <input type="submit" id="submitButton">
+        </form>
+        <div id="counter"></div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () =>{
+                count = document.getElementById("count");
+                submitButton = document.getElementById("submitButton");
+
+                document.querySelector("form").onsubmit = () =>{
+                    document.getElementById("counter").innerHTML = "";
+                    no_of_times = count.value;
+
+                    submitButton.disabled = true;
+
+                    const intervalId = setInterval(() => {
+                        document.getElementById("counter").innerHTML += "<p>Hello</p>";
+                        no_of_times--;
+
+                        if(no_of_times==0){
+                            clearInterval(intervalId);
+                            submitButton.disabled = false;
+                        }
+                    }, 1000);
+                    
+                    return false;
+                }
+            });
+        </script>
+    </body>
+</html>

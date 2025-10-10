@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To-Do List</title>
+    </head>
+    <body style="text-align: center;">
+        <h1>To-Do List</h1>
+        <form>
+            <input autofocus type="text" placeholder="What needs to be done today?" id="task"/>
+            <input type="submit" id="submitButton">
+        </form>
+        <div style="height: auto; width: 70%; border: 1px;">
+            <ul id="toDoListContent"></ul>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () =>{
+                task = document.getElementById("task");
+                submitButton = document.getElementById("submitButton");
+
+                submitButton.disabled = true;
+
+                task.onkeyup = () => {
+                    if(task.value.length>0){
+                        submitButton.disabled = false;
+                    }
+                    else{
+                        submitButton.disabled = true;
+                    }
+                }
+
+                document.querySelector("form").onsubmit = () =>{
+                    if(task.value.length>0){
+                        document.getElementById("toDoListContent").innerHTML += `<li>${task.value}</li>`;
+                        task.value = "";
+                    }
+                    submitButton.disabled = false;
+                    return false;
+                }
+
+            });
+        </script>
+    </body>
+</html>
