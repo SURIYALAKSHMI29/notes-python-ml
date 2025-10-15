@@ -4,3 +4,5 @@ __pycache__/
 .pytest_cache
 
 week_3/python_3_exercises/large_file.txt
+
+env/
