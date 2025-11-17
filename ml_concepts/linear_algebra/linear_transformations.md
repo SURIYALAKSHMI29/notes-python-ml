@@ -30,21 +30,21 @@
 - Can modify i hat and j hat to transform linearly
 - **Example (2D transformation)**
 
-    ![Linear Transformation example](./images/lt_1.png)
+    ![Linear Transformation example](./images/lt1.png)
     Background gray lines are original 
     Origin is fixed](attachment:6ae6fa1c-e110-4d74-ba68-94befc49a603:image.png)
     
     Background gray lines are original 
     Origin is fixed
 
-    ![Linear Transformation example](./images/lt_2.png)
+    ![Linear Transformation example](./images/lt2.png)
     By knowing i hat and j hat, we can transform any vector](attachment:be68217e-6a88-40d7-b042-b639057cf191:image.png)
     
     By knowing i hat and j hat, we can transform any vector
     
     - The i hat and j hat co-ordinates are commonly packed into a 2*2 matrix
         
-        ![Linear Transformation example](./images/lt_3.png)
+        ![Linear Transformation example](./images/lt3.png)
         
 - **Shear Transformation**
     - Angles changes
@@ -112,7 +112,7 @@
 - 3D Transformation can be described only by using 9 numbers (3*3 matrix)
 - Each of input vector co-ordinates can be considered as of instructions that guides us how to scale each basis vector, and that adds together to get the output vector
 
-    ![3D Linear Transformation example](./images/lt_4.png)
+    ![3D Linear Transformation example](./images/lt4.png)
     Multiply the co-ordinates by the corresponding columns of the vectors, then added together to produce resultant vecto](attachment:a58bd880-63e8-4f37-8957-e294ec583149:image.png)
     
     Multiply the co-ordinates by the corresponding columns of the vectors, then added together to produce resultant vecto
