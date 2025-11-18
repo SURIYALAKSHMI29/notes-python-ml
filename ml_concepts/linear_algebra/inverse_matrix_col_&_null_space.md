@@ -31,7 +31,10 @@
 - Applying a transformation, and applying reverse of the transformation results in initial vector
 
   $$
-  AA^{-1} = I \\
+  AA^{-1} = I
+  $$
+  
+  $$
   A^{-1}A = I
   $$
 
@@ -57,7 +60,9 @@
 - **Zero vector** is always included in the column space, since linear transformations must keep the origin fixed in place
 
   $$
-  ⎡ 0 ⎤ \\
+  ⎡ 0 ⎤ 
+  $$
+  $$
   ⎣ 0 ⎦
   $$
 
