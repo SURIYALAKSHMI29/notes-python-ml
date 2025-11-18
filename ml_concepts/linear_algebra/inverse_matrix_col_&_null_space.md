@@ -31,8 +31,8 @@
 - Applying a transformation, and applying reverse of the transformation results in initial vector
 
   $$
-  A A⁻¹ = I \\\\
-  A⁻¹ A = I
+  AA^{-1} = I \\
+  A^{-1}A = I
   $$
 
   - Here I is the identity matrix
