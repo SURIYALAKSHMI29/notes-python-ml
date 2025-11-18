@@ -117,13 +117,15 @@ $$
 
 - A matrix with m rows and n columns (m×n) encodes a transformation from an n-dimensional space (input vectors) to an m-dimensional space (output vectors)
 
-  $$
-  \begin{bmatrix}
-  1 & 0 \\
-  0 & 1 \\
-  1 & 1
-  \end{bmatrix}
-  $$
+ $$
+⎡ 1 0⎤ 
+$$
+$$
+⎣ 0 1⎦
+$$
+$$
+⎡ 1 1 ⎤ 
+$$
 
 - Here, we have 3*2 matrix
 - We are transforming 2D to 3D
