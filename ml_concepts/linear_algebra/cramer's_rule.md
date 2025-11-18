@@ -44,7 +44,7 @@ This shows that how determinants measure "how much your vector sticks out" along
     
     y = Area divided by det(A)
     
-    ![1000033765.jpg](./images/cramer4.png)
+    ![1000033765.jpg](./images/cramer4.jpg)
     
 
 By this way, linear system of equations can be solved. This method is called **Cramer’s Rule**
