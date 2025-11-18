@@ -30,13 +30,13 @@
   - If the dimension is reduced → det(A) will become 0
 - Applying a transformation, and applying reverse of the transformation results in initial vector
 
-  $$
-  AA^{-1} = I
-  $$
+$$
+AA^{-1} = I
+$$
   
-  $$
-  A^{-1}A = I
-  $$
+$$
+A^{-1}A = I
+$$
 
   - Here I is the identity matrix
   - I vector as unit vectors as its columns
@@ -59,12 +59,12 @@
 - **A vector equation Ax = v has a solution *if and only if* v lies in the column space of A**
 - **Zero vector** is always included in the column space, since linear transformations must keep the origin fixed in place
 
-  $$
-  ⎡ 0 ⎤ 
-  $$
-  $$
-  ⎣ 0 ⎦
-  $$
+$$
+⎡ 0 ⎤ 
+$$
+$$
+⎣ 0 ⎦
+$$
 
   - For a full rank(invertible) transformation, the only vector that lands at the origin is the zero vector itself
     - It does **not collapse** space.
