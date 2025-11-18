@@ -31,7 +31,7 @@
 - Applying a transformation, and applying reverse of the transformation results in initial vector
 
   $$
-  A A⁻¹ = I \\
+  A A⁻¹ = I 
   A⁻¹ A = I
   $$
 
