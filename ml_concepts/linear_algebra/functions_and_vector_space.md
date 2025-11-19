@@ -24,7 +24,7 @@
 - Here, we use basis functions which is similar to basis co-ordinates i hat, j hat, k hat
 - **Example**
     
-    ![Axioms](./images/axioms.png)
+    ![derivative ](./images/function.png)
     
     d / dx is represented as a infinite matrix, with values on offset diagonal
     The polynomial is also represented as a infinite column matrix
@@ -39,4 +39,4 @@
 
 A **vector space** is a set of vectors along with operations of **addition** and **scalar multiplication** that satisfy the following properties:
 
-![image.png](attachment:27946e90-7c1d-4091-80a7-b08824f738d5:image.png)
+![Axioms](./images/axioms.png)
