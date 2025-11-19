@@ -1,4 +1,4 @@
-#Eigen vectors and values
+Eigen vectors and values
 ---
 
 ## Table of Contents
