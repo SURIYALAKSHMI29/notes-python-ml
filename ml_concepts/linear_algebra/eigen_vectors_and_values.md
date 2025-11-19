@@ -106,6 +106,6 @@ d^2 = mean^2 - product
 
 1. Thus, 
     
-    $$
-    λ1, λ2 = m ± sqrt(m^2 - (ad - bc))
-    $$
+$$
+λ1, λ2 = m ± sqrt(m^2 - (ad - bc))
+$$
