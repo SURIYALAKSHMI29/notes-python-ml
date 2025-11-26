@@ -4,7 +4,7 @@
   - [L1 Norm](#l1-norm)
   - [Squared L2 Norm](#squared-l2-norm)
   - [Max Norm](#max-norm)
-  - [Generalized Lp Norm](#generalized-Lp-norm)
+  - [Generalized Lp Norm](#generalized-lp-norm)
 
 ---
 
