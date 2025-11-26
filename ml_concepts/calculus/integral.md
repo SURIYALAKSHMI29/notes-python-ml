@@ -75,6 +75,6 @@ Here, velocity v(t) varies over time
     
 - The function f(x) is exactly the derivative or slope function of F(x). The slope of F(x) at any point *x* represents how quickly this accumulated area is increasing at x
 
-![Average height intuition](../images/integration5.png)
+![Average height intuition](./images/integration5.png)
 
 Avg height = signed area of graph / width
