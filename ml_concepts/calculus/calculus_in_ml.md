@@ -77,4 +77,17 @@ Opposite of gradient = direction of maximum decrease**
 **Attention Mechanisms**
 
 - In transformers, Query Q, key K and values V matrices are derived form input embedding using trainable weights
-- During back prop
+- During back propagation, Derivatives tell us how much each Q, K, V weight contributes to the final prediction error
+
+**Embedding matrices**
+
+- Each embedding vector is adjusted slightly depending on how the corresponding word influenced the loss
+
+---
+
+## Integral
+- In Probabilistic models (Bayesian inference or Gaussian processes) →Used to calculate probabilities and and expectations.
+    - For ex, the probability density function must be integrated over a range to find expected values and likelihoods
+- Data Integration
+- Integrating performance data, user feedback and embedding to adapt models for specific tasks
+    - Example, Aggregating results over many queries to optimize a model’s response in a recommendation engine
