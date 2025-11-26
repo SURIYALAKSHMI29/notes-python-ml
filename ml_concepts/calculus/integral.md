@@ -1,9 +1,3 @@
-# Table of Contents
-- [Integration](#integration)
-  - [Average of a Continuous function](#average-of-a-continuous-function)
-
----
-
 # Integration
 
 - Integration is the process of **summing up a large number of small contributions** to find a total quantity
@@ -16,7 +10,7 @@
     
 - Many problems can broken down and approximated as the sum of a large number of small things
 
-![Integration concept](../images/integration.png)
+![Integration concept](./images/integration.png)
 
 Here, dF(x) /dx → anti-derivative of f(x)
 
@@ -24,7 +18,7 @@ Actually there are infinite anti-derivative of the given function, since derivat
 
 **Example**
 
-![Velocity time explanation](../images/integration1.png)
+![Velocity time explanation](./images/integration1.png)
 
 Here, velocity v(t) varies over time
 
@@ -53,11 +47,11 @@ Here, velocity v(t) varies over time
       Sum of sin(x) over pi, and divided by number of samples
     - This can be expressed in integral as,
     
-    ![Average value sin graph](../images/integration2.png)
+    ![Average value sin graph](./images/integration2.png)
     
     Here, integral of sin(x) dx is summation of small triangles (Area)
     
-    ![Small triangle summation](../images/integration3.png)
+    ![Small triangle summation](./images/integration3.png)
     
     Number of samples = total length / split interval (dx)
     
@@ -71,7 +65,7 @@ Here, velocity v(t) varies over time
     
     - Think of summing infinitely many tiny rectangles (f(x) dx) and dividing by the total width (b−a) → the average height of the function
     
-    ![Average value formula illustration](../images/integration4.png)
+    ![Average value formula illustration](./images/integration4.png)
     
     LHS → {F(upper bound) - F(lower bound)} / (upper bound - lower bound)
     
