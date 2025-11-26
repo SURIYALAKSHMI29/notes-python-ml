@@ -49,7 +49,7 @@
   $$
     
    - Computationally better than L2 norm because,
-      - Since squared L2 norm is equal to x transpose. x
+   - Since squared L2 norm is equal to x transpose. x
 ## **Max Norm**
   - Also known as L inifinity norm
         
@@ -59,7 +59,7 @@
         
   - Returns the absolute value of the largest-magnitude element
 
-##**Generalized Lp norm**
+## **Generalized Lp norm**
 
 $$
 ||x||_p = {(\sum_i |x_i|^p)}^\frac {1}{p}
