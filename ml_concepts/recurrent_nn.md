@@ -5,6 +5,9 @@
 * [Recurrent Neural Network](#recurrent-neural-network)
 
   * [Components](#components)
+
+    * [Recurrent Neurons / Units](#recurrent-neurons--units)
+    * [RNN Unfolding](#rnn-unfolding)
   * [Architecture](#architecture)
   * [Types of RNN](#types-of-rnn)
 
@@ -15,6 +18,7 @@
   * [Back Propagation Through Time (BPTT)](#back-propagation-through-time-bptt)
 
 ---
+
 
 # **Recurrent Neural Network**
 
