@@ -5,9 +5,6 @@
 * [Recurrent Neural Network](#recurrent-neural-network)
 
   * [Components](#components)
-
-    * [Recurrent Neurons / Units](#recurrent-neurons--units)
-    * [RNN Unfolding](#rnn-unfolding)
   * [Architecture](#architecture)
   * [Types of RNN](#types-of-rnn)
 
@@ -26,7 +23,7 @@
 
 ## **Components**
 
-### 1. **Recurrent neurons / units**
+###1. **Recurrent neurons / units**
     - A neuron that loops back to itself
     - Recurrent Unit hold a hidden state that maintains the information about previous inputs in a sequence
     - That hidden state is passed to the next time step. So the neuron “remembers” because it always receives its own previous output
@@ -42,7 +39,7 @@
             
             Combines the previous memory to form the new memory
             
-### 2. **RNN unfolding**
+###2. **RNN unfolding**
     - Process of expanding the RNN across time so we can see every step and the hidden states, enabling back Propagation through time (BPTT)
     - BPTT → learning process where error are propagated across time steps to adjust the network’s weights
         - For example, consider a 3 page chapter. Page 3 confusion → realized page 2 is misunderstood → realized page 1 is misunderstand
