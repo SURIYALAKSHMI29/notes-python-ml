@@ -82,7 +82,7 @@
 - To rotate, Add (vertical distance)*(horizontal distance) to slope
 - To translate, Add (vertical distance) to y-intercept
     
-    ![linear regression](./images/linear_reg1.png)
+    ![linear regression](./images/linear_reg.png)
     
 
 ### Square Error
