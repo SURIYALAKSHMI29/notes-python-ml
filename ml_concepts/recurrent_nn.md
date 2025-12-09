@@ -46,17 +46,17 @@
 - Uses shared weights across time steps, allowing them to remember information over sequences
 1. **Hidden State Calculation**
     
-    $$
+$$
     hₜ = f(W_x · xₜ  +  W_h · hₜ₋₁ + B)
-    $$
+$$
     
 2. **Output Calculation**
-    
-    $$
+
+$$
     Y = O(V.h + C)
-    $$
+$$
     
-    O → activation function to the weighted hidden state 
+   O → activation function to the weighted hidden state 
     
 
 ![rnn architecture](./images/recc_nn1.png)
