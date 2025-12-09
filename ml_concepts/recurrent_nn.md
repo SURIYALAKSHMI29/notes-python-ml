@@ -7,7 +7,7 @@
   * [Components](#components)
   * [Architecture](#architecture)
   * [Types of RNN](#types-of-rnn)
-  * [Back Propagation Through Time (BPTT)](#back-propagation-through-time-bptt)
+  * [Back Propagation Through Time (BPTT)](#back-propagation-through-time-bptt-in-RNN)
 
 ---
 
