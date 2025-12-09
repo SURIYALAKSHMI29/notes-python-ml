@@ -53,6 +53,19 @@
     - RMSprop → keeps a moving average of the squared gradients to normalize the gradient updates  
 7. **Adam** → Combines momentum and RMSprop  
 
+
+## Batch Gradient Descent
+
+- Processing the entire dataset at once
+- Suitable for small-medium sized dataset, doesn’t oscillate much
+- Disadvantage: if Large dataset → slow
+
+## Stochastic Gradient Descent
+
+- Updating at every step
+- Faster; But oscillates more
+- Used when the dataset is larger
+
 # Gradient Descent Algorithm
 
 - Finding the most efficient and principled way of navigating the error surface
