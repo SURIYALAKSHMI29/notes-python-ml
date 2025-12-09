@@ -47,9 +47,9 @@
 - Adds the squared magnitude of the co-efficient as a penalty term to the loss function
 - Handles Multicollinearity by shrinking the coefficients of correlated features instead of eliminating them
     
-  $$
+$$
   Cost = \frac {1} {n}\sum_{i=1}^n (y_i - \hat y_i)^2 + \lambda \sum_{i=1} ^m w_i^2  
-  $$
+$$
     
 - **Usage: When we want stability and all features matter**
 
@@ -58,11 +58,11 @@
 - Combination of both L1 as well as L2 regularization
 - Add the absolute norm of the weights as well as the squared measure of the weights → A hyperparameter is used to control the ratio of L1 and L2 regularization
     
-  $$
+$$
   Cost = \frac {1} {n}\sum_{i=1}^n (y_i - \hat y_i)^2 + \lambda ((1- \alpha)\sum_{i=1} ^m|w_i|  + \alpha \sum_{i=1} ^m w_i^2) 
-  $$
+ $$
     
-    *α →*Mixing parameter where 0 ≤ *α* ≤ 1
+   *α →*Mixing parameter where 0 ≤ *α* ≤ 1
     
 - **Usage: When features are correlated**
 
