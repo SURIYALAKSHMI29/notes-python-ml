@@ -76,7 +76,6 @@
     - Sequence of inputs → Sequence of outputs
     - Ecample: language translation
 
-
 ## Back Propagation through Time (BPTT) in RNN
 
 ![bptt](./images/recc_nn2.png)
