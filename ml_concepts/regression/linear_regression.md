@@ -12,12 +12,13 @@
     
     where m is slope and c is y-intercept
     
-- For multiple features,  
-  $$
-  y = w_1x_1 + w_2x_2+....+w_n x_n+ b
-  $$
+- For multiple features,
+   
+      $$
+      y = w_1x_1 + w_2x_2+....+w_n x_n+ b
+      $$
     
-  where x1,..xn are features, w1,..wn are weights and b is bias
+      where x1,..xn are features, w1,..wn are weights and b is bias
     
 
 - **General equation**  
