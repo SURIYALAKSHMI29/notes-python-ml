@@ -24,7 +24,7 @@ where x1,..xn are features, w1,..wn are weights and b is bias
 ### **General equation**
 
 $$
-h(x) = \sum_{i=0}^n \theta_i x_i \
+h(x) = \sum_{i=0}^n \theta_i x_i \\
 where,\, x_0 = 1
 $$
 
