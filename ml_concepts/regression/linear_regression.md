@@ -12,23 +12,21 @@
     
     where m is slope and c is y-intercept
     
-- For multiple features,
-    
+- For multiple features,  
   $$
   y = w_1x_1 + w_2x_2+....+w_n x_n+ b
   $$
     
-    where x1,..xn are features, w1,..wn are weights and b is bias
+  where x1,..xn are features, w1,..wn are weights and b is bias
     
 
-- **General equation**
-    
+- **General equation**  
   $$
   h(x) = \sum_{i=0}^n\theta_i x_i \\[5mm]
   where,\,x_0 = 1
   $$
     
-    Here x0=1 (intercept), theta → parameters
+  Here x0=1 (intercept), theta → parameters
     
 - Linear regression has no local minimum → the loss function is quadratic resulting in quadratic curve
     
@@ -39,10 +37,9 @@
   $$
     
 - Instead of using gradient descent in linear regression, we can find directly by equating the derivative to 0 vector. Loss will be minimum when it is 0
-    
-    $$
-    \theta = (X^T.X)^{-1} X^Ty
-    $$
+  $$
+  \theta = (X^T.X)^{-1} X^Ty
+  $$
 
   
 ### Transformation
