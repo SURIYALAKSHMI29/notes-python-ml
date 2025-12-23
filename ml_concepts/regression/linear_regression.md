@@ -24,7 +24,9 @@ where x1,..xn are features, w1,..wn are weights and b is bias
 ### **General equation**
 
 $$
-\text h(x) = \sum_{i=0}^n \theta_i x_i  \\[5mm]
+\text h(x) = \sum_{i=0}^n \theta_i x_i 
+$$
+$$
 \text where, x_0 = 1
 $$
 
@@ -33,8 +35,12 @@ Here x0 = 1 (intercept), theta → parameters
 - Linear regression has no local minimum → the loss function is quadratic resulting in quadratic curve
 
 $$
-\text{cost function} = \frac{1}{2} \sum_{i=1}^{m} (\hat{y}_i - y_i)^2 \\[5mm]
-\text{(i.e)}\ \frac{1}{2} (X\theta - Y)^T (X\theta - Y) \\[3mm]
+\text{cost function} = \frac{1}{2} \sum_{i=1}^{m} (\hat{y}_i - y_i)^2 
+$$
+$$
+\text{(i.e)}\ \frac{1}{2} (X\theta - Y)^T (X\theta - Y) 
+$$
+$$
 \text{As, } A^T \cdot A = A^2
 $$
 
